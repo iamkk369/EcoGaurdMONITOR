@@ -1,0 +1,22 @@
+{
+  "name": "ecoguardai",
+  "version": "1.0.0",
+  "description": "EcoGuardAI – Agentic AI Platform for Smart Industrial Pollution Monitoring",
+  "scripts": {
+    "dev": "concurrently \"uvicorn api.main:app --reload\" \"python scripts/simulate_sensors.py\"",
+    "lint": "flake8 . --max-line-length=120",
+    "test": "pytest tests/ -v"
+  },
+  "keywords": [
+    "ibm-granite",
+    "watsonx",
+    "pollution-monitoring",
+    "agentic-ai",
+    "fastapi"
+  ],
+  "author": "EcoGuardAI Contributors",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

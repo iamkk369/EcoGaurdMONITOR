@@ -1,0 +1,221 @@
+{
+  "air": {
+    "SO2": {
+      "limit": 80,
+      "unit": "µg/m³",
+      "averaging_period": "24h",
+      "standard": "NAAQ 2009",
+      "description": "Sulphur Dioxide"
+    },
+    "NOX": {
+      "limit": 80,
+      "unit": "µg/m³",
+      "averaging_period": "24h",
+      "standard": "NAAQ 2009",
+      "description": "Oxides of Nitrogen"
+    },
+    "PM25": {
+      "limit": 60,
+      "unit": "µg/m³",
+      "averaging_period": "24h",
+      "standard": "NAAQ 2009",
+      "description": "Particulate Matter < 2.5 µm"
+    },
+    "PM10": {
+      "limit": 100,
+      "unit": "µg/m³",
+      "averaging_period": "24h",
+      "standard": "NAAQ 2009",
+      "description": "Particulate Matter < 10 µm"
+    },
+    "CO": {
+      "limit": 4000,
+      "unit": "µg/m³",
+      "averaging_period": "8h",
+      "standard": "NAAQ 2009",
+      "description": "Carbon Monoxide"
+    },
+    "O3": {
+      "limit": 100,
+      "unit": "µg/m³",
+      "averaging_period": "8h",
+      "standard": "NAAQ 2009",
+      "description": "Ozone"
+    },
+    "NH3": {
+      "limit": 400,
+      "unit": "µg/m³",
+      "averaging_period": "24h",
+      "standard": "NAAQ 2009",
+      "description": "Ammonia"
+    },
+    "BENZENE": {
+      "limit": 5,
+      "unit": "µg/m³",
+      "averaging_period": "annual",
+      "standard": "NAAQ 2009",
+      "description": "Benzene"
+    }
+  },
+  "water": {
+    "PH": {
+      "min": 6.5,
+      "max": 8.5,
+      "limit": 8.5,
+      "unit": "pH",
+      "standard": "IS:10500",
+      "description": "pH Level"
+    },
+    "BOD": {
+      "limit": 30,
+      "unit": "mg/L",
+      "standard": "CPCB Effluent Standards",
+      "description": "Biological Oxygen Demand"
+    },
+    "COD": {
+      "limit": 250,
+      "unit": "mg/L",
+      "standard": "CPCB Effluent Standards",
+      "description": "Chemical Oxygen Demand"
+    },
+    "TSS": {
+      "limit": 100,
+      "unit": "mg/L",
+      "standard": "CPCB Effluent Standards",
+      "description": "Total Suspended Solids"
+    },
+    "TDS": {
+      "limit": 2100,
+      "unit": "mg/L",
+      "standard": "IS:10500",
+      "description": "Total Dissolved Solids"
+    },
+    "OIL_GREASE": {
+      "limit": 10,
+      "unit": "mg/L",
+      "standard": "CPCB Effluent Standards",
+      "description": "Oil and Grease"
+    },
+    "CHLORIDE": {
+      "limit": 1000,
+      "unit": "mg/L",
+      "standard": "CPCB Effluent Standards",
+      "description": "Chloride"
+    },
+    "SULFATE": {
+      "limit": 1000,
+      "unit": "mg/L",
+      "standard": "CPCB Effluent Standards",
+      "description": "Sulphate"
+    },
+    "FLUORIDE": {
+      "limit": 2.0,
+      "unit": "mg/L",
+      "standard": "IS:10500",
+      "description": "Fluoride"
+    }
+  },
+  "heavy_metals": {
+    "PB": {
+      "limit": 0.05,
+      "unit": "mg/L",
+      "standard": "IS:10500",
+      "description": "Lead"
+    },
+    "CR": {
+      "limit": 0.1,
+      "unit": "mg/L",
+      "standard": "IS:10500",
+      "description": "Chromium (Total)"
+    },
+    "CR6": {
+      "limit": 0.05,
+      "unit": "mg/L",
+      "standard": "IS:10500",
+      "description": "Hexavalent Chromium"
+    },
+    "HG": {
+      "limit": 0.001,
+      "unit": "mg/L",
+      "standard": "IS:10500",
+      "description": "Mercury"
+    },
+    "AS": {
+      "limit": 0.05,
+      "unit": "mg/L",
+      "standard": "IS:10500",
+      "description": "Arsenic"
+    },
+    "CD": {
+      "limit": 0.01,
+      "unit": "mg/L",
+      "standard": "IS:10500",
+      "description": "Cadmium"
+    },
+    "NI": {
+      "limit": 0.2,
+      "unit": "mg/L",
+      "standard": "IS:10500",
+      "description": "Nickel"
+    },
+    "ZN": {
+      "limit": 5.0,
+      "unit": "mg/L",
+      "standard": "IS:10500",
+      "description": "Zinc"
+    },
+    "CU": {
+      "limit": 3.0,
+      "unit": "mg/L",
+      "standard": "IS:10500",
+      "description": "Copper"
+    },
+    "FE": {
+      "limit": 3.0,
+      "unit": "mg/L",
+      "standard": "IS:10500",
+      "description": "Iron"
+    }
+  },
+  "industry_specific": {
+    "chemical": {
+      "SO2": { "limit": 500, "unit": "mg/Nm³", "standard": "GPCB Schedule-I" },
+      "NOX": { "limit": 400, "unit": "mg/Nm³", "standard": "GPCB Schedule-I" },
+      "HCL": { "limit": 35, "unit": "mg/Nm³", "standard": "GPCB Schedule-I" },
+      "CL2": { "limit": 15, "unit": "mg/Nm³", "standard": "GPCB Schedule-I" },
+      "H2S": { "limit": 5, "unit": "mg/Nm³", "standard": "GPCB Schedule-I" },
+      "BOD": { "limit": 100, "unit": "mg/L", "standard": "GPCB Effluent" },
+      "COD": { "limit": 500, "unit": "mg/L", "standard": "GPCB Effluent" },
+      "TSS": { "limit": 150, "unit": "mg/L", "standard": "GPCB Effluent" }
+    },
+    "textile": {
+      "BOD": { "limit": 150, "unit": "mg/L", "standard": "GPCB Effluent" },
+      "COD": { "limit": 400, "unit": "mg/L", "standard": "GPCB Effluent" },
+      "TSS": { "limit": 200, "unit": "mg/L", "standard": "GPCB Effluent" },
+      "PH": { "min": 5.5, "max": 9.0, "limit": 9.0, "unit": "pH", "standard": "GPCB Effluent" },
+      "TDS": { "limit": 4000, "unit": "mg/L", "standard": "GPCB Effluent" },
+      "COLOR": { "limit": 400, "unit": "Pt-Co units", "standard": "GPCB Effluent" }
+    },
+    "cetp": {
+      "BOD": { "limit": 20, "unit": "mg/L", "standard": "CPCB CETP Norms" },
+      "COD": { "limit": 100, "unit": "mg/L", "standard": "CPCB CETP Norms" },
+      "TSS": { "limit": 50, "unit": "mg/L", "standard": "CPCB CETP Norms" },
+      "PH": { "min": 6.0, "max": 9.0, "limit": 9.0, "unit": "pH", "standard": "CPCB CETP Norms" },
+      "OIL": { "limit": 10, "unit": "mg/L", "standard": "CPCB CETP Norms" },
+      "FLOW": { "limit": 10000, "unit": "m³/day", "standard": "GPCB Consent" }
+    },
+    "pharmaceutical": {
+      "BOD": { "limit": 30, "unit": "mg/L", "standard": "CPCB Pharma" },
+      "COD": { "limit": 250, "unit": "mg/L", "standard": "CPCB Pharma" },
+      "TSS": { "limit": 100, "unit": "mg/L", "standard": "CPCB Pharma" },
+      "PH": { "min": 6.5, "max": 8.5, "limit": 8.5, "unit": "pH", "standard": "CPCB Pharma" },
+      "ANTIBIOTICS": { "limit": 0.05, "unit": "µg/L", "standard": "Draft CPCB 2022" }
+    },
+    "fertilizer": {
+      "NH3": { "limit": 50, "unit": "mg/L", "standard": "GPCB Effluent" },
+      "TKN": { "limit": 100, "unit": "mg/L", "standard": "GPCB Effluent" },
+      "PH": { "min": 6.0, "max": 9.0, "limit": 9.0, "unit": "pH", "standard": "GPCB Effluent" },
+      "FLUORIDE": { "limit": 10, "unit": "mg/L", "standard": "GPCB Effluent" }
+    }
+  }
+}

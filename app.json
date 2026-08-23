@@ -1,0 +1,17 @@
+{
+  "name": "EcoGuardAI",
+  "version": "1.0.0",
+  "description": "Agentic AI Platform for Smart Industrial Pollution Monitoring for the Golden Corridor (Vapi-Ankleshwar-Vatva), powered by IBM Granite on IBM watsonx.ai.",
+  "entry": "api.main:app",
+  "port": 8000,
+  "framework": "FastAPI",
+  "license": "MIT",
+  "author": "EcoGuardAI Contributors",
+  "keywords": [
+    "ibm-granite",
+    "watsonx",
+    "pollution-monitoring",
+    "agentic-ai",
+    "fastapi"
+  ]
+}

@@ -1,0 +1,1 @@
+"""EcoGuardAI API package."""

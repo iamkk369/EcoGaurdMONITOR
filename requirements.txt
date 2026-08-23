@@ -1,0 +1,35 @@
+fastapi>=0.111.0
+uvicorn[standard]>=0.29.0
+pydantic>=2.7.1
+pydantic-settings>=2.2.1
+sqlalchemy>=2.0.30
+asyncpg>=0.29.0
+alembic>=1.13.1
+ibm-watsonx-ai>=1.6.3
+ibm-cloud-sdk-core>=3.26.0
+paho-mqtt>=2.0.0
+redis>=5.0.0
+aiohttp>=3.9.5
+httpx>=0.27.0
+python-dotenv>=1.0.1
+pandas>=2.2.2
+numpy>=1.26.4
+# scikit-learn: optional for local installs on Python 3.14 (no wheel yet).
+# The violation agent runs in threshold-only mode when not installed locally.
+# The Docker image (python:3.11-slim) DOES install scikit-learn — ML anomaly
+# detection is fully enabled inside the container.
+# To install locally on Python 3.11/3.12/3.13: pip install scikit-learn
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+python-multipart>=0.0.9
+schedule>=1.2.1
+loguru>=0.7.2
+pytest>=8.2.0
+pytest-asyncio>=0.23.6
+anyio>=4.0.0
+# New dependencies for updated roadmap
+streamlit>=1.38.0
+langflow>=0.7.0
+ollama>=0.4.0
+chromadb>=0.5.0  # For RAG vector storage in Step 5
+typer==0.27.1

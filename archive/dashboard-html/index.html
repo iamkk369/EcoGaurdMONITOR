@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EcoGaurdMONITOR — Smart Industrial Pollution Monitoring</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><path d='M16 2C8 8 4 14 4 20a12 12 0 0 0 24 0c0-6-4-12-12-18z' fill='%2316A34A'/></svg>" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="layout">
+
+    <!-- ── Sidebar ─────────────────────────────────────────────────────── -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <svg class="brand-logo" viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16 2C8 8 4 14 4 20a12 12 0 0 0 24 0c0-6-4-12-12-18z" fill="#16A34A"/>
+          <path d="M16 8v18M16 14c-2-1.5-4-1.5-6-1M16 19c2-1.5 4-1.5 6-1" stroke="#14532D" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <span class="brand-name">EcoGaurd<span class="accent">MONITOR</span></span>
+          <span class="brand-sub">Smart Industrial Pollution Monitoring</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section">Overview</div>
+        <a class="nav-item active" data-page="home"><span class="nav-ico">⌂</span>Home</a>
+        <a class="nav-item" data-page="dashboard"><span class="nav-ico">▦</span>Dashboard</a>
+
+        <div class="nav-section">Monitoring</div>
+        <a class="nav-item" data-page="live-monitoring"><span class="nav-ico">◉</span>Live Monitoring</a>
+        <a class="nav-item" data-page="air-quality"><span class="nav-ico">☁</span>Air Quality</a>
+        <a class="nav-item" data-page="water-quality"><span class="nav-ico">≈</span>Water Quality</a>
+        <a class="nav-item" data-page="industrial-units"><span class="nav-ico">🏭</span>Industrial Units</a>
+        <a class="nav-item" data-page="pollution-map"><span class="nav-ico">⌖</span>Pollution Map</a>
+
+        <div class="nav-section">Analysis</div>
+        <a class="nav-item" data-page="violations"><span class="nav-ico">⚠</span>Violations &amp; Alerts</a>
+        <a class="nav-item" data-page="history"><span class="nav-ico">◷</span>Historical Analysis</a>
+        <a class="nav-item" data-page="health-risk"><span class="nav-ico">✚</span>Health Risk</a>
+        <a class="nav-item" data-page="harmful-pollutants"><span class="nav-ico">☣</span>Harmful Pollutants</a>
+
+        <div class="nav-section">Intelligence</div>
+        <a class="nav-item nav-item--soon" data-page="ai-analysis"><span class="nav-ico">✦</span>AI Analysis<span class="tag-soon">Step 3</span></a>
+        <a class="nav-item nav-item--soon" data-page="ecoai"><span class="nav-ico">◈</span>EcoAI Assistant<span class="tag-soon">Step 3</span></a>
+
+        <div class="nav-section">Project</div>
+        <a class="nav-item" data-page="about"><span class="nav-ico">ⓘ</span>About Project</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <span class="dot dot--connecting" id="sidebarConnDot"></span>
+        <span id="sidebarConnText">Connecting…</span>
+      </div>
+    </aside>
+
+    <!-- ── Main column ─────────────────────────────────────────────────── -->
+    <div class="main-col">
+
+      <!-- Top status bar -->
+      <header class="topbar">
+        <div class="topbar-left">
+          <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">☰</button>
+          <div>
+            <span class="topbar-title">EcoGaurdMONITOR</span>
+            <span class="topbar-sub">Smart Industrial Pollution Monitoring</span>
+          </div>
+        </div>
+        <div class="topbar-right">
+          <div class="live-pill">
+            <span class="dot dot--connecting" id="liveDot"></span>
+            <span id="liveText">CONNECTING</span>
+          </div>
+          <div class="notif-dot" title="Active alerts">
+            <span aria-hidden="true">🔔</span>
+            <span class="badge-num" id="notifCount">0</span>
+          </div>
+          <div class="topbar-time" id="clockDisplay">--:--:--</div>
+        </div>
+      </header>
+
+      <main class="content" id="content">
+<!-- ══ HOME PAGE ═══════════════════════════════════════════════ -->
+        <div class="page" id="page-home">
+          <section class="hero">
+            <h1>Smart Industrial Pollution Monitoring</h1>
+            <p>EcoGaurdMONITOR provides a unified platform for monitoring industrial air and water pollution, identifying environmental violations, analyzing risks, and understanding pollution trends.</p>
+            <span class="brand-badge">Real-time · Agentic AI-ready</span>
+          </section>
+
+          <section class="panel panel--wide">
+            <div class="panel-header"><h2 class="panel-title">Why EcoGaurdMONITOR?</h2></div>
+            <div class="feature-grid">
+              <div class="feature-card"><h3>Real-time Monitoring</h3><p>Instrumentation streams live sensor readings for immediate situational awareness.</p></div>
+              <div class="feature-card"><h3>Industrial Pollution Tracking</h3><p>Track emissions and effluent across manufacturing and process industries.</p></div>
+              <div class="feature-card"><h3>Air Quality Monitoring</h3><p>AQI and air pollutant parameters evaluated against national standards.</p></div>
+              <div class="feature-card"><h3>Water Quality Monitoring</h3><p>Effluent parameters such as BOD, COD, TDS, TSS and pH with permitted limits.</p></div>
+              <div class="feature-card"><h3>Violation Detection</h3><p>Automated detection with severity classification of regulatory exceedances.</p></div>
+              <div class="feature-card"><h3>Environmental Alerts</h3><p>Live alerts streamed to the dashboard as violations are detected.</p></div>
+              <div class="feature-card"><h3>Health Risk Awareness</h3><p>AQI-based public health risk levels and general safety guidance.</p></div>
+              <div class="feature-card"><h3>Historical Analysis</h3><p>Session and trend analytics to understand pollution over time.</p></div>
+            </div>
+          </section>
+
+          <section class="panel panel--wide">
+            <div class="panel-header"><h2 class="panel-title">Project Status</h2></div>
+            <p style="margin-bottom:8px"><strong style="color:var(--accent-dark)">Current:</strong> Real-time monitoring + analytics + violation detection + alerts.</p>
+            <p style="margin-bottom:8px"><strong style="color:var(--accent-dark)">Next:</strong> AI-powered environmental intelligence using IBM Granite (Step 3).</p>
+            <p class="muted-sm">Developed as part of the IBM workshop/project initiative. Dashboard = operational console · Home = project introduction.</p>
+          </section>
+        </div>
+<div class="page" id="page-dashboard" hidden>
+          <div class="page-banner" id="connBanner" hidden>
+            <span id="connBannerText">Backend unavailable — waiting for live data…</span>
+            <button class="btn-refresh" onclick="app.refreshAll()">Retry</button>
+          </div>
+
+          <div class="kpi-strip" style="grid-column:span 12">
+            <div class="kpi-card"><div class="kpi-value" id="kpiStations">—</div><div class="kpi-label">Monitoring Stations</div></div>
+            <div class="kpi-card kpi-card--warn"><div class="kpi-value" id="kpiViolations">—</div><div class="kpi-label">Active Violations</div></div>
+            <div class="kpi-card"><div class="kpi-value" id="kpiMaxAqi">—</div><div class="kpi-label">Highest AQI</div></div>
+            <div class="kpi-card kpi-card--good"><div class="kpi-value" id="kpiCompliance">—</div><div class="kpi-label">Compliance Rate</div></div>
+            <div class="kpi-card"><div class="kpi-value" id="kpiAlerts">—</div><div class="kpi-label">Active Alerts</div></div>
+            <div class="kpi-card"><div class="kpi-value" id="kpiRiskZones">—</div><div class="kpi-label">High-Risk Zones</div></div>
+          </div>
+
+          <section class="panel panel--wide">
+            <div class="panel-header">
+              <h2 class="panel-title">Live Station Status</h2>
+              <div class="panel-actions">
+                <span class="muted-sm" id="lastUpdateLabel">—</span>
+                <button class="btn-refresh" onclick="app.refreshAll()">⟳ Refresh</button>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table" id="stationTable">
+                <thead>
+                  <tr>
+                    <th>Station ID</th><th>Location</th><th>AQI</th><th>Category</th>
+                    <th>Active Violations</th><th>Compliance</th><th>Status</th><th>Readings</th>
+                  </tr>
+                </thead>
+                <tbody id="stationTableBody"><tr><td colspan="8" class="empty-row">Waiting for live data…</td></tr></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-header">
+              <h2 class="panel-title">AQI Trend</h2>
+              <div class="panel-actions">
+                <select id="trendStationSelect" class="select-sm" onchange="app.updateTrendChart()"><option value="">All Stations (avg)</option></select>
+                <select id="trendRangeSelect" class="select-sm" onchange="app.updateTrendChart()">
+                  <option value="live" selected>Live Session</option>
+                  <option value="24h">Last 24 Hours</option>
+                  <option value="7d">Last 7 Days</option>
+                  <option value="30d">Last 30 Days</option>
+                </select>
+              </div>
+            </div>
+            <div class="range-note" id="rangeNote" hidden>Historical range not available from the backend — showing the live session trend.</div>
+            <div class="chart-wrap"><canvas id="aqiTrendChart"></canvas></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-header"><h2 class="panel-title">Pollutant Breakdown</h2><span class="muted-sm">by violation count</span></div>
+            <div class="chart-wrap"><canvas id="pollutantChart"></canvas></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-header"><h2 class="panel-title">Regulatory Alerts</h2><span class="badge" id="alertCountDash">0</span></div>
+            <div class="feed" id="alertsDash"><p class="feed-empty">No alerts recorded yet.</p></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-header"><h2 class="panel-title">Health Snapshot</h2><span class="badge" id="healthSnapBadge">—</span></div>
+            <div class="summary-grid">
+              <div class="summary-item"><span class="summary-key">Highest AQI</span><span class="summary-val" id="healthSnapAqi">—</span></div>
+              <div class="summary-item"><span class="summary-key">Status</span><span class="summary-val" id="healthSnapStatus">—</span></div>
+            </div>
+            <div class="advisory-grid" style="margin-top:12px">
+              <div class="advisory-item"><span class="advisory-ico">😷</span>Wear a mask during poor air quality</div>
+              <div class="advisory-item"><span class="advisory-ico">💧</span>Stay hydrated</div>
+            </div>
+            <p class="advisory-note">General environmental safety guidance · AI recommendations in Step 3.</p>
+          </section>
+        </div>
+<!-- ══ LIVE MONITORING PAGE ═══════════════════════════════════ -->
+        <div class="page" id="page-live-monitoring" hidden>
+          <section class="panel panel--wide">
+            <div class="panel-header">
+              <h2 class="panel-title">Live Monitoring</h2>
+              <div class="panel-actions">
+                <select id="liveStationSelect" class="select-sm" onchange="app.loadLivePage()"></select>
+                <span class="live-pill"><span class="dot" id="livePageDot"></span><span id="livePageText">—</span></span>
+                <button class="btn-refresh" onclick="app.loadLivePage(true)">⟳ Refresh</button>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Pollutant</th><th>Measured Value</th><th>Unit</th><th>Permitted Limit</th><th>Status</th><th>Timestamp</th></tr>
+                </thead>
+                <tbody id="liveAirBody"><tr><td colspan="6" class="empty-row">Waiting for live data…</td></tr></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="panel panel--wide">
+            <div class="panel-header"><h2 class="panel-title">Live Event Feed</h2><span class="muted-sm">updates via SSE stream</span></div>
+            <div class="feed" id="liveEventFeed"><p class="feed-empty">No live events yet.</p></div>
+          </section>
+        </div>
+
+        <!-- ══ AIR QUALITY PAGE ══════════════════════════════════════ -->
+        <div class="page" id="page-air-quality" hidden>
+          <div class="kpi-strip kpi-strip--4" style="grid-column:span 12">
+            <div class="kpi-card"><div class="kpi-value" id="airCurAqi">—</div><div class="kpi-label">Current AQI (avg)</div></div>
+            <div class="kpi-card"><div class="kpi-value" id="airMaxAqi">—</div><div class="kpi-label">Highest AQI</div></div>
+            <div class="kpi-card"><div class="kpi-value" id="airCat">—</div><div class="kpi-label">Overall Category</div></div>
+            <div class="kpi-card kpi-card--warn"><div class="kpi-value" id="airViolCount">—</div><div class="kpi-label">Air Violations</div></div>
+          </div>
+
+          <section class="panel">
+            <div class="panel-header"><h2 class="panel-title">AQI Trend</h2>
+              <select id="airAqiStation" class="select-sm" onchange="app.renderAirAqiChart()"><option value="">All Stations (avg)</option></select>
+            </div>
+            <div class="chart-wrap"><canvas id="airAqiChart"></canvas></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-header"><h2 class="panel-title">Major Pollutants</h2><span class="muted-sm">PM2.5 · PM10 · NOx · SO2 · CO</span></div>
+            <div class="chart-wrap"><canvas id="airPollutantChart"></canvas></div>
+          </section>
+
+          <section class="panel panel--wide">
+            <div class="panel-header">
+              <h2 class="panel-title">Pollutant Levels by Station</h2>
+              <div class="panel-actions">
+                <select id="airStationSelect" class="select-sm" onchange="app.loadAirPage()"></select>
+                <button class="btn-refresh" onclick="app.loadAirPage(true)">⟳ Refresh</button>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Station</th><th>Pollutant</th><th>Value</th><th>Unit</th><th>Permitted Limit</th><th>% of Limit</th><th>Status</th></tr>
+                </thead>
+                <tbody id="airTableBody"><tr><td colspan="7" class="empty-row">Loading readings…</td></tr></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <!-- ══ WATER QUALITY PAGE ════════════════════════════════════ -->
+        <div class="page" id="page-water-quality" hidden>
+          <div class="kpi-strip kpi-strip--4" style="grid-column:span 12">
+            <div class="kpi-card"><div class="kpi-value">—</div><div class="kpi-label">WQI (not exposed)</div></div>
+            <div class="kpi-card"><div class="kpi-value" id="wqParamCount">—</div><div class="kpi-label">Parameters Monitored</div></div>
+            <div class="kpi-card kpi-card--warn"><div class="kpi-value" id="waterExceed">—</div><div class="kpi-label">Exceedances</div></div>
+            <div class="kpi-card kpi-card--good"><div class="kpi-value" id="waterCompliant">—</div><div class="kpi-label">Compliant Readings</div></div>
+          </div>
+
+          <section class="panel panel--wide">
+            <div class="panel-header">
+              <h2 class="panel-title">Water Quality Parameters</h2>
+              <div class="panel-actions"><button class="btn-refresh" onclick="app.loadWaterPage(true)">⟳ Refresh</button></div>
+            </div>
+            <p class="advisory-note">WQI data is not currently available from the backend.</p>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Station</th><th>Parameter</th><th>Value</th><th>Unit</th><th>Permitted Limit</th><th>% of Limit</th><th>Status</th></tr>
+                </thead>
+                <tbody id="waterTableBody"><tr><td colspan="7" class="empty-row">Loading readings…</td></tr></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <!-- ══ INDUSTRIAL UNITS PAGE ═══════════════════════════════════ -->
+        <div class="page" id="page-industrial-units" hidden>
+          <section class="panel panel--wide">
+            <div class="panel-header">
+              <h2 class="panel-title">Industrial Units &amp; Monitoring Stations</h2>
+              <button class="btn-refresh" onclick="app.loadUnitsPage(true)">⟳ Refresh</button>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Station / Unit</th><th>Location</th><th>Industry Type</th><th>AQI</th><th>Violations</th><th>Compliance</th><th>Risk</th><th>Readings</th></tr>
+                </thead>
+                <tbody id="unitsTableBody"><tr><td colspan="8" class="empty-row">Loading units…</td></tr></tbody>
+              </table>
+            </div>
+            <p class="advisory-note">Detailed company metadata is not currently exposed by the backend — monitoring-station registry information is shown instead.</p>
+          </section>
+        </div>
+
+        <!-- ══ POLLUTION MAP PAGE ═════════════════════════════════════ -->
+        <div class="page" id="page-pollution-map" hidden>
+          <section class="panel panel--wide">
+            <div class="panel-header">
+              <h2 class="panel-title">Pollution Map — Station Coordinate Plot</h2>
+              <button class="btn-refresh" onclick="app.loadMapPage(true)">⟳ Refresh</button>
+            </div>
+            <div class="map-legend">
+              <span><i class="lg-dot lg-good"></i>Good</span>
+              <span><i class="lg-dot lg-moderate"></i>Moderate</span>
+              <span><i class="lg-dot lg-unhealthy"></i>Unhealthy</span>
+              <span><i class="lg-dot lg-highrisk"></i>High Risk</span>
+              <span><i class="lg-dot lg-critical"></i>Critical</span>
+            </div>
+            <div class="chart-wrap chart-wrap--tall"><canvas id="pollutionMapChart"></canvas></div>
+            <p class="advisory-note" id="mapCoordNote">Plotting real station coordinates returned by the backend (not a GPS street map).</p>
+          </section>
+
+          <section class="panel panel--wide">
+            <div class="panel-header"><h2 class="panel-title">Station Locations</h2></div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead><tr><th>Station</th><th>Location</th><th>Latitude</th><th>Longitude</th><th>AQI</th><th>Status</th></tr></thead>
+                <tbody id="mapTableBody"><tr><td colspan="6" class="empty-row">Loading locations…</td></tr></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <!-- ══ VIOLATIONS & ALERTS PAGE ════════════════════════════════ -->
+        <div class="page" id="page-violations" hidden>
+          <section class="panel panel--wide">
+            <div class="panel-header">
+              <h2 class="panel-title">Violation Records</h2>
+              <div class="panel-actions">
+                <select id="violSevFilter" class="select-sm" onchange="app.renderViolationsPage()">
+                  <option value="">All Severities</option>
+                  <option value="LOW">LOW</option><option value="MEDIUM">MEDIUM</option>
+                  <option value="HIGH">HIGH</option><option value="CRITICAL">CRITICAL</option>
+                </select>
+                <select id="violStationFilter" class="select-sm" onchange="app.renderViolationsPage()"></select>
+                <select id="violPollutantFilter" class="select-sm" onchange="app.renderViolationsPage()"></select>
+                <button class="btn-refresh" onclick="app.loadViolationsPage(true)">⟳ Refresh</button>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Station</th><th>Pollutant</th><th>Measured Value</th><th>Limit</th><th>Exceedance</th><th>Severity</th><th>Timestamp</th></tr>
+                </thead>
+                <tbody id="violPageBody"><tr><td colspan="7" class="empty-row">No violations found.</td></tr></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="panel panel--wide">
+            <div class="panel-header"><h2 class="panel-title">Regulatory Alerts</h2><span class="badge" id="pageAlertCount">0</span></div>
+            <div class="feed" id="alertsFeed"><p class="feed-empty">No alerts recorded yet.</p></div>
+          </section>
+        </div>
+
+        <!-- ══ HISTORICAL ANALYSIS PAGE ═════════════════════════════════ -->
+        <div class="page" id="page-history" hidden>
+          <section class="panel panel--wide">
+            <div class="panel-header">
+              <h2 class="panel-title">Historical AQI Analysis</h2>
+              <div class="panel-actions">
+                <select id="histStationSelect" class="select-sm" onchange="app.renderHistoryPage()"></select>
+                <select id="histRangeSelect" class="select-sm" onchange="app.renderHistoryPage()">
+                  <option value="live" selected>Live Session</option>
+                  <option value="24h">Last 24 Hours</option>
+                  <option value="7d">Last 7 Days</option>
+                  <option value="30d">Last 30 Days</option>
+                </select>
+              </div>
+            </div>
+            <div class="range-note" id="histNote" hidden>
+              Historical monitoring data is not currently available from the backend. The backend does not yet expose a historical AQI endpoint — only the live session trend is shown. No historical values are fabricated.
+            </div>
+            <div class="chart-wrap chart-wrap--tall"><canvas id="historyChart"></canvas></div>
+          </section>
+        </div>
+
+        <!-- ══ HEALTH RISK PAGE ═══════════════════════════════════════ -->
+        <div class="page" id="page-health-risk" hidden>
+          <div class="kpi-strip kpi-strip--4" style="grid-column:span 12">
+            <div class="kpi-card"><div class="kpi-value" id="hrOverall">—</div><div class="kpi-label">Overall Risk</div></div>
+            <div class="kpi-card"><div class="kpi-value" id="hrStations">—</div><div class="kpi-label">Stations Assessed</div></div>
+            <div class="kpi-card kpi-card--warn"><div class="kpi-value" id="hrUnhealthy">—</div><div class="kpi-label">Unhealthy+ Stations</div></div>
+            <div class="kpi-card"><div class="kpi-value" id="hrUpdated">—</div><div class="kpi-label">Assessed At</div></div>
+          </div>
+
+          <section class="panel panel--wide">
+            <div class="panel-header">
+              <h2 class="panel-title">Station Risk Assessment</h2>
+              <button class="btn-refresh" onclick="app.loadHealthPage(true)">⟳ Refresh</button>
+            </div>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead><tr><th>Station</th><th>AQI</th><th>Risk Level</th><th>Description</th><th>Active Violations</th><th>Compliance</th></tr></thead>
+                <tbody id="healthTableBody"><tr><td colspan="6" class="empty-row">Waiting for risk assessment…</td></tr></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="panel panel--wide">
+            <div class="panel-header"><h2 class="panel-title">General Safety Guidance</h2></div>
+            <div class="advisory-grid">
+              <div class="advisory-item"><span class="advisory-ico">😷</span>Wear a mask during poor air-quality conditions</div>
+              <div class="advisory-item"><span class="advisory-ico">💧</span>Stay hydrated</div>
+              <div class="advisory-item"><span class="advisory-ico">🚶</span>Avoid prolonged outdoor activity during high pollution</div>
+              <div class="advisory-item"><span class="advisory-ico">📢</span>Follow local environmental advisories</div>
+            </div>
+            <p class="advisory-note">General frontend safety guidance — not AI-generated. AI-driven recommendations arrive in Step 3.</p>
+          </section>
+        </div>
+
+        <!-- ══ HARMFUL POLLUTANTS PAGE ═════════════════════════════════ -->
+        <div class="page" id="page-harmful-pollutants" hidden>
+          <section class="panel panel--wide">
+            <div class="panel-header">
+              <h2 class="panel-title">Monitored Pollutants &amp; Standards</h2>
+              <button class="btn-refresh" onclick="app.loadPollutantsPage(true)">⟳ Refresh</button>
+            </div>
+            <p class="muted-sm" style="margin-bottom:12px">
+              Reference limits are project configuration (NAAQS 2009 / CPCB / IS:10500 standards bundled with the application).
+              "Latest value" reflects actual readings returned by the backend; "—" means no reading is currently available.
+            </p>
+            <div class="table-wrap">
+              <table class="data-table">
+                <thead>
+                  <tr><th>Pollutant</th><th>Type</th><th>Latest Value</th><th>Permitted Limit</th><th>Status</th><th>Potential Concern</th></tr>
+                </thead>
+                <tbody id="pollutantsBody"><tr><td colspan="6" class="empty-row">Loading pollutant reference…</td></tr></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
+
+        <!-- ══ AI ANALYSIS PAGE (STEP 3 placeholder) ═══════════════════ -->
+        <div class="page" id="page-ai-analysis" hidden>
+          <section class="panel panel--wide">
+            <div class="placeholder-card">
+              <div class="placeholder-ico">✦</div>
+              <h2 class="placeholder-title">AI Environmental Analysis</h2>
+              <span class="placeholder-tag">COMING IN STEP 3</span>
+              <ul class="placeholder-list">
+                <li>Daily pollution analysis</li>
+                <li>Weekly analysis</li>
+                <li>Monthly analysis</li>
+                <li>Pollution trend analysis</li>
+                <li>Violation summaries</li>
+                <li>Regulatory analysis</li>
+                <li>Environmental insights &amp; recommendations</li>
+                <li>IBM Granite generated reports</li>
+              </ul>
+              <p>These AI capabilities are planned for Step 3. No AI output is generated yet.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- ══ ECOAI ASSISTANT PAGE (STEP 3 placeholder) ══════════════ -->
+        <div class="page" id="page-ecoai" hidden>
+          <section class="panel panel--wide">
+            <div class="placeholder-card">
+              <div class="placeholder-ico">◈</div>
+              <h2 class="placeholder-title">EcoAI Assistant</h2>
+              <span class="placeholder-tag">COMING IN STEP 3</span>
+              <ul class="placeholder-list">
+                <li>Ask about current pollution</li>
+                <li>Ask about stations</li>
+                <li>Ask about violations</li>
+                <li>Ask about historical trends</li>
+                <li>Ask about pollutants</li>
+                <li>Ask about environmental risks</li>
+              </ul>
+              <p>Planned backend integration: IBM Granite. No fake chatbot responses are generated.</p>
+            </div>
+          </section>
+        </div>
+
+        <!-- ══ ABOUT PROJECT PAGE ═════════════════════════════════════ -->
+        <div class="page" id="page-about" hidden>
+          <section class="panel panel--wide">
+            <div class="panel-header"><h2 class="panel-title">About EcoGaurdMONITOR</h2></div>
+            <div class="about-body">
+              <h2>Problem</h2>
+              <p>Industrial belts face a growing challenge of manual, delayed environmental monitoring. Effluent and emission exceedances are often detected only after the damage, leaving regulators and communities without timely insight.</p>
+
+              <h2>Solution</h2>
+              <p>EcoGaurdMONITOR provides centralized, real-time monitoring of industrial air and water pollution — combining live sensor data, automated violation detection, alerts, analytics, and health-risk insight in one dashboard.</p>
+
+              <h2>Current Features</h2>
+              <ul>
+                <li>Real-time sensor/simulator readings</li>
+                <li>Multiple monitoring stations</li>
+                <li>Air pollutant monitoring</li>
+                <li>Water pollutant monitoring</li>
+                <li>Violation detection &amp; severity classification</li>
+                <li>Regulatory alerts</li>
+                <li>SSE live updates</li>
+                <li>AQI monitoring</li>
+                <li>Pollution analytics</li>
+                <li>Health-risk assessment</li>
+              </ul>
+
+              <h2>Technology Stack</h2>
+              <ul>
+                <li>Backend: Python · FastAPI · SQLAlchemy (async) · Server-Sent Events</li>
+                <li>Frontend: HTML · CSS · JavaScript · Chart.js</li>
+                <li>AI (backend capability): IBM Granite · IBM watsonx.ai</li>
+                <li>Database: PostgreSQL</li>
+              </ul>
+
+              <h2>Architecture</h2>
+              <ul>
+                <li>Sensor / Simulator</li>
+                <li>↓ Backend API</li>
+                <li>↓ Monitoring + Violation Logic</li>
+                <li>↓ Event / SSE Stream</li>
+                <li>↓ EcoGaurdMONITOR Frontend</li>
+                <li>↓ Step 3: IBM Granite + EcoAI</li>
+              </ul>
+
+              <h2>Challenges</h2>
+              <ul>
+                <li>High-frequency sensor data</li>
+                <li>Real-time monitoring</li>
+                <li>Pollution threshold detection</li>
+                <li>Multiple pollutant types</li>
+                <li>Live event streaming</li>
+                <li>Rate limiting</li>
+                <li>Historical data handling</li>
+                <li>AI integration</li>
+              </ul>
+
+              <h2>Future Plan</h2>
+              <ul>
+                <li>Step 1 — Core Monitoring</li>
+                <li>Step 2 — Environmental Analytics</li>
+                <li>Step 3 — AI Intelligence</li>
+              </ul>
+              <p class="muted-sm">Future possibilities: real IoT sensors, cloud deployment, advanced historical analytics, AI environmental reports, predictive pollution analysis, wider regional monitoring.</p>
+            </div>
+          </section>
+        </div>
+
+      </main>
+
+      <footer class="footer">
+        EcoGaurdMONITOR · Smart Industrial Pollution Monitoring · IBM workshop project
+      </footer>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

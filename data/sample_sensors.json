@@ -1,0 +1,204 @@
+[
+  {
+    "station_id": "VAPI-001",
+    "name": "Vapi Industrial Estate North",
+    "location": "Vapi, Gujarat",
+    "industry_type": "chemical",
+    "latitude": 20.3893,
+    "longitude": 72.9106,
+    "contact_email": "compliance@vapi-north.com",
+    "sensors": [
+      {"sensor_id": "S-001-SO2", "pollutant_type": "SO2", "unit": "µg/m³"},
+      {"sensor_id": "S-001-NOX", "pollutant_type": "NOX", "unit": "µg/m³"},
+      {"sensor_id": "S-001-PM25", "pollutant_type": "PM25", "unit": "µg/m³"},
+      {"sensor_id": "S-001-PM10", "pollutant_type": "PM10", "unit": "µg/m³"},
+      {"sensor_id": "S-001-BOD", "pollutant_type": "BOD", "unit": "mg/L"},
+      {"sensor_id": "S-001-COD", "pollutant_type": "COD", "unit": "mg/L"}
+    ]
+  },
+  {
+    "station_id": "VAPI-002",
+    "name": "Vapi GIDC Chemical Zone",
+    "location": "GIDC Vapi, Gujarat",
+    "industry_type": "chemical",
+    "latitude": 20.3712,
+    "longitude": 72.9031,
+    "contact_email": "env@vapi-gidc.com",
+    "sensors": [
+      {"sensor_id": "S-002-SO2", "pollutant_type": "SO2", "unit": "µg/m³"},
+      {"sensor_id": "S-002-H2S", "pollutant_type": "H2S", "unit": "mg/Nm³"},
+      {"sensor_id": "S-002-PM10", "pollutant_type": "PM10", "unit": "µg/m³"},
+      {"sensor_id": "S-002-COD", "pollutant_type": "COD", "unit": "mg/L"},
+      {"sensor_id": "S-002-PH", "pollutant_type": "PH", "unit": "pH"},
+      {"sensor_id": "S-002-PB", "pollutant_type": "PB", "unit": "mg/L"}
+    ]
+  },
+  {
+    "station_id": "VAPI-003",
+    "name": "Vapi Textile Processing Cluster",
+    "location": "Vapi South, Gujarat",
+    "industry_type": "textile",
+    "latitude": 20.3601,
+    "longitude": 72.9178,
+    "contact_email": "env@vapi-textile.com",
+    "sensors": [
+      {"sensor_id": "S-003-BOD", "pollutant_type": "BOD", "unit": "mg/L"},
+      {"sensor_id": "S-003-COD", "pollutant_type": "COD", "unit": "mg/L"},
+      {"sensor_id": "S-003-TSS", "pollutant_type": "TSS", "unit": "mg/L"},
+      {"sensor_id": "S-003-PH", "pollutant_type": "PH", "unit": "pH"},
+      {"sensor_id": "S-003-TDS", "pollutant_type": "TDS", "unit": "mg/L"}
+    ]
+  },
+  {
+    "station_id": "ANKL-001",
+    "name": "Ankleshwar GIDC Sector A",
+    "location": "Ankleshwar, Bharuch, Gujarat",
+    "industry_type": "chemical",
+    "latitude": 21.6267,
+    "longitude": 73.0019,
+    "contact_email": "env@ankl-sectorA.com",
+    "sensors": [
+      {"sensor_id": "S-004-SO2", "pollutant_type": "SO2", "unit": "µg/m³"},
+      {"sensor_id": "S-004-NOX", "pollutant_type": "NOX", "unit": "µg/m³"},
+      {"sensor_id": "S-004-PM25", "pollutant_type": "PM25", "unit": "µg/m³"},
+      {"sensor_id": "S-004-PM10", "pollutant_type": "PM10", "unit": "µg/m³"},
+      {"sensor_id": "S-004-CO", "pollutant_type": "CO", "unit": "µg/m³"},
+      {"sensor_id": "S-004-CR", "pollutant_type": "CR", "unit": "mg/L"}
+    ]
+  },
+  {
+    "station_id": "ANKL-002",
+    "name": "Ankleshwar Pharma Cluster",
+    "location": "Ankleshwar East, Gujarat",
+    "industry_type": "pharmaceutical",
+    "latitude": 21.6389,
+    "longitude": 73.0134,
+    "contact_email": "compliance@ankl-pharma.com",
+    "sensors": [
+      {"sensor_id": "S-005-BOD", "pollutant_type": "BOD", "unit": "mg/L"},
+      {"sensor_id": "S-005-COD", "pollutant_type": "COD", "unit": "mg/L"},
+      {"sensor_id": "S-005-PH", "pollutant_type": "PH", "unit": "pH"},
+      {"sensor_id": "S-005-TSS", "pollutant_type": "TSS", "unit": "mg/L"},
+      {"sensor_id": "S-005-AS", "pollutant_type": "AS", "unit": "mg/L"}
+    ]
+  },
+  {
+    "station_id": "ANKL-003",
+    "name": "Ankleshwar Fertilizer Unit",
+    "location": "Ankleshwar West, Gujarat",
+    "industry_type": "fertilizer",
+    "latitude": 21.6145,
+    "longitude": 72.9912,
+    "contact_email": "env@ankl-fertilizer.com",
+    "sensors": [
+      {"sensor_id": "S-006-NH3", "pollutant_type": "NH3", "unit": "mg/L"},
+      {"sensor_id": "S-006-NOX", "pollutant_type": "NOX", "unit": "µg/m³"},
+      {"sensor_id": "S-006-SO2", "pollutant_type": "SO2", "unit": "µg/m³"},
+      {"sensor_id": "S-006-PH", "pollutant_type": "PH", "unit": "pH"},
+      {"sensor_id": "S-006-FLUORIDE", "pollutant_type": "FLUORIDE", "unit": "mg/L"}
+    ]
+  },
+  {
+    "station_id": "VATVA-001",
+    "name": "Vatva GIDC Chemical Estate",
+    "location": "Vatva, Ahmedabad, Gujarat",
+    "industry_type": "chemical",
+    "latitude": 22.9720,
+    "longitude": 72.6411,
+    "contact_email": "compliance@vatva-chem.com",
+    "sensors": [
+      {"sensor_id": "S-007-SO2", "pollutant_type": "SO2", "unit": "µg/m³"},
+      {"sensor_id": "S-007-NOX", "pollutant_type": "NOX", "unit": "µg/m³"},
+      {"sensor_id": "S-007-PM25", "pollutant_type": "PM25", "unit": "µg/m³"},
+      {"sensor_id": "S-007-PM10", "pollutant_type": "PM10", "unit": "µg/m³"},
+      {"sensor_id": "S-007-HG", "pollutant_type": "HG", "unit": "mg/L"},
+      {"sensor_id": "S-007-CD", "pollutant_type": "CD", "unit": "mg/L"}
+    ]
+  },
+  {
+    "station_id": "VATVA-002",
+    "name": "Vatva Dye & Pigment Zone",
+    "location": "Vatva East, Ahmedabad, Gujarat",
+    "industry_type": "textile",
+    "latitude": 22.9688,
+    "longitude": 72.6512,
+    "contact_email": "env@vatva-dye.com",
+    "sensors": [
+      {"sensor_id": "S-008-BOD", "pollutant_type": "BOD", "unit": "mg/L"},
+      {"sensor_id": "S-008-COD", "pollutant_type": "COD", "unit": "mg/L"},
+      {"sensor_id": "S-008-TSS", "pollutant_type": "TSS", "unit": "mg/L"},
+      {"sensor_id": "S-008-CR6", "pollutant_type": "CR6", "unit": "mg/L"},
+      {"sensor_id": "S-008-PH", "pollutant_type": "PH", "unit": "pH"}
+    ]
+  },
+  {
+    "station_id": "BHARUCH-001",
+    "name": "Bharuch Riverside Industrial Zone",
+    "location": "Bharuch, Gujarat",
+    "industry_type": "chemical",
+    "latitude": 21.7051,
+    "longitude": 72.9959,
+    "contact_email": "env@bharuch-industrial.com",
+    "sensors": [
+      {"sensor_id": "S-009-SO2", "pollutant_type": "SO2", "unit": "µg/m³"},
+      {"sensor_id": "S-009-PM25", "pollutant_type": "PM25", "unit": "µg/m³"},
+      {"sensor_id": "S-009-CO", "pollutant_type": "CO", "unit": "µg/m³"},
+      {"sensor_id": "S-009-BOD", "pollutant_type": "BOD", "unit": "mg/L"},
+      {"sensor_id": "S-009-PB", "pollutant_type": "PB", "unit": "mg/L"},
+      {"sensor_id": "S-009-ZN", "pollutant_type": "ZN", "unit": "mg/L"}
+    ]
+  },
+  {
+    "station_id": "SACHIN-001",
+    "name": "Sachin GIDC Multi-Industry Zone",
+    "location": "Sachin, Surat, Gujarat",
+    "industry_type": "chemical",
+    "latitude": 21.0849,
+    "longitude": 72.8827,
+    "contact_email": "env@sachin-gidc.com",
+    "sensors": [
+      {"sensor_id": "S-010-SO2", "pollutant_type": "SO2", "unit": "µg/m³"},
+      {"sensor_id": "S-010-NOX", "pollutant_type": "NOX", "unit": "µg/m³"},
+      {"sensor_id": "S-010-PM10", "pollutant_type": "PM10", "unit": "µg/m³"},
+      {"sensor_id": "S-010-BOD", "pollutant_type": "BOD", "unit": "mg/L"},
+      {"sensor_id": "S-010-COD", "pollutant_type": "COD", "unit": "mg/L"},
+      {"sensor_id": "S-010-NI", "pollutant_type": "NI", "unit": "mg/L"}
+    ]
+  },
+  {
+    "station_id": "CETP-001",
+    "name": "Vapi Common Effluent Treatment Plant",
+    "location": "Vapi Central, Gujarat",
+    "industry_type": "cetp",
+    "latitude": 20.3755,
+    "longitude": 72.9089,
+    "contact_email": "cetp-management@gpcb.gov.in",
+    "sensors": [
+      {"sensor_id": "S-011-BOD", "pollutant_type": "BOD", "unit": "mg/L"},
+      {"sensor_id": "S-011-COD", "pollutant_type": "COD", "unit": "mg/L"},
+      {"sensor_id": "S-011-TSS", "pollutant_type": "TSS", "unit": "mg/L"},
+      {"sensor_id": "S-011-PH", "pollutant_type": "PH", "unit": "pH"},
+      {"sensor_id": "S-011-TDS", "pollutant_type": "TDS", "unit": "mg/L"},
+      {"sensor_id": "S-011-OIL", "pollutant_type": "OIL", "unit": "mg/L"},
+      {"sensor_id": "S-011-FLOW", "pollutant_type": "FLOW", "unit": "m³/day"}
+    ]
+  },
+  {
+    "station_id": "CETP-002",
+    "name": "Ankleshwar CETP",
+    "location": "Ankleshwar Central, Gujarat",
+    "industry_type": "cetp",
+    "latitude": 21.6220,
+    "longitude": 73.0055,
+    "contact_email": "ankl-cetp@gpcb.gov.in",
+    "sensors": [
+      {"sensor_id": "S-012-BOD", "pollutant_type": "BOD", "unit": "mg/L"},
+      {"sensor_id": "S-012-COD", "pollutant_type": "COD", "unit": "mg/L"},
+      {"sensor_id": "S-012-TSS", "pollutant_type": "TSS", "unit": "mg/L"},
+      {"sensor_id": "S-012-PH", "pollutant_type": "PH", "unit": "pH"},
+      {"sensor_id": "S-012-TDS", "pollutant_type": "TDS", "unit": "mg/L"},
+      {"sensor_id": "S-012-OIL", "pollutant_type": "OIL", "unit": "mg/L"},
+      {"sensor_id": "S-012-FLOW", "pollutant_type": "FLOW", "unit": "m³/day"}
+    ]
+  }
+]

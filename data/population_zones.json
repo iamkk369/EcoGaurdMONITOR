@@ -1,0 +1,74 @@
+[
+  {
+    "station_id": "VAPI-001",
+    "population_density": 2500,
+    "vulnerable_groups": ["school", "residential"],
+    "notes": "Dense residential area with a primary school within a 2km radius."
+  },
+  {
+    "station_id": "VAPI-002",
+    "population_density": 1800,
+    "vulnerable_groups": ["market", "residential"],
+    "notes": "Mixed-use area with a large local market."
+  },
+  {
+    "station_id": "VAPI-003",
+    "population_density": 1200,
+    "vulnerable_groups": ["residential"],
+    "notes": "Primarily residential, downstream from the textile cluster."
+  },
+  {
+    "station_id": "ANKL-001",
+    "population_density": 3500,
+    "vulnerable_groups": ["hospital", "school", "residential"],
+    "notes": "Very dense area with a major hospital and several schools nearby."
+  },
+  {
+    "station_id": "ANKL-002",
+    "population_density": 2800,
+    "vulnerable_groups": ["residential"],
+    "notes": "Large residential zone adjacent to the pharmaceutical cluster."
+  },
+  {
+    "station_id": "ANKL-003",
+    "population_density": 900,
+    "vulnerable_groups": [],
+    "notes": "Less populated industrial buffer zone."
+  },
+  {
+    "station_id": "VATVA-001",
+    "population_density": 4500,
+    "vulnerable_groups": ["hospital", "residential"],
+    "notes": "Extremely dense urban area with a government hospital."
+  },
+  {
+    "station_id": "VATVA-002",
+    "population_density": 3800,
+    "vulnerable_groups": ["market", "residential"],
+    "notes": "Densely populated area with a large textile market."
+  },
+  {
+    "station_id": "BHARUCH-001",
+    "population_density": 1500,
+    "vulnerable_groups": ["residential"],
+    "notes": "Riverside communities, potentially affected by water pollution."
+  },
+  {
+    "station_id": "SACHIN-001",
+    "population_density": 2200,
+    "vulnerable_groups": ["school"],
+    "notes": "Developing residential area with new schools."
+  },
+  {
+    "station_id": "CETP-001",
+    "population_density": 3000,
+    "vulnerable_groups": ["hospital", "residential"],
+    "notes": "Central Vapi, near a major public hospital. Downstream river access."
+  },
+  {
+    "station_id": "CETP-002",
+    "population_density": 2500,
+    "vulnerable_groups": ["market"],
+    "notes": "Central Ankleshwar, near a major commercial market."
+  }
+]

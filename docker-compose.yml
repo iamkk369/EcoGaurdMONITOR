@@ -1,0 +1,83 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    container_name: ecoguardai_api
+    ports:
+      - "8000:8000"
+    environment:
+      # These override any .env values so container-internal hostnames are used
+      - DATABASE_URL=postgresql://ecoguard:ecoguard@db:5432/ecoguardai
+      - REDIS_URL=redis://redis:6379
+      - MQTT_BROKER_HOST=mqtt
+      - MQTT_BROKER_PORT=1883
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      mqtt:
+        condition: service_started
+    restart: unless-stopped
+    # DEV MODE: volume mount enables live-reload without rebuilding the image.
+    # For production deployments remove the volumes block and the --reload flag,
+    # or override via: docker-compose -f docker-compose.yml -f docker-compose.prod.yml up
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: python -m uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
+
+  db:
+    image: timescale/timescaledb:latest-pg15
+    container_name: ecoguardai_db
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ecoguard
+      POSTGRES_PASSWORD: ecoguard
+      POSTGRES_DB: ecoguardai
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ecoguard -d ecoguardai"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: ecoguardai_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    restart: unless-stopped
+
+  mqtt:
+    image: eclipse-mosquitto:2
+    container_name: ecoguardai_mqtt
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+    restart: unless-stopped
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: ecoguardai_pgadmin
+    ports:
+      - "5050:80"
+    environment:
+      # Override PGADMIN_EMAIL and PGADMIN_PASSWORD in .env before exposing
+      # pgadmin to any network other than localhost.
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@ecoguardai.com}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin}
+    depends_on:
+      - db
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:
