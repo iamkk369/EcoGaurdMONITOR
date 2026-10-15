@@ -1,4 +1,4 @@
-# 🌿 EcoGuardAI
+# 🌿 EcoGuarMONITOR
 
 ### Agentic AI Platform for Smart Industrial Pollution Monitoring
 
